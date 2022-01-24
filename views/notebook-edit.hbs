@@ -1,0 +1,74 @@
+<h1>Edit Notebook: {{notebook.title}}</h1>
+<form action="/notebooks/edit" method="POST" class="z-depth-4 f_control">
+
+  <div class="input-field col s6">
+    <input
+      id="title"
+      type="text"
+      class="validate"
+      name="title"
+      value="{{notebook.title}}"
+      required
+    />
+    <label for="title">Notebook model</label>
+    <span class="helper-text" data-error="Enter Your notebook Model "> </span>
+  </div>
+
+  <div class="input-field col s6">
+    <input
+      id="price"
+      type="number"
+      class="validate"
+      name="price"
+      value="{{notebook.price}}"
+      required
+    />
+    <label for="price">Enter notebook price</label>
+    <span class="helper-text" data-error="price"></span>
+  </div>
+
+  <div class="input-field col s6">
+    <input
+      id="img"
+      type="text"
+      class="validate"
+      required
+      name="img"
+      value="{{notebook.img}}"
+    />
+    <label for="img">Url Image</label>
+    <span class="helper-text" data-error="URL img"></span>
+  </div>
+  <div class="input-field col s6">
+    <textarea
+      id="description"
+      type="text"
+      class="materialize-textarea"
+      required
+      name="description"
+    >{{notebook.description}}</textarea>
+    <label for="description">Description</label>
+    <span
+      class="helper-text"
+      data-error="Enter your description for notebook!"
+    ></span>
+  </div>
+  <input type="hidden" name="_id" value="{{notebook._id}}" />
+  <div class="buttons row">
+    <div class="col s6">
+      <button
+        type="submit"
+        class="btn green darken-3 z-depth-4 waves-effect waves-light"
+      >Edit Notebook</button>
+    </div>
+
+  </div>
+</form>
+<form action="/notebooks/remove" class="col s6" method="POST">
+  <input type="hidden" name="_id" value="{{notebook._id}}" />
+  <button
+    type="submit"
+    class="btn red darken-4 z-depth-4 waves-effect waves-light"
+  >Remove Notebook
+  </button>
+</form>

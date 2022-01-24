@@ -1,0 +1,32 @@
+<h1>Notebooks</h1>
+{{#if notebooks.length}}
+  <div class="notebooks-list">
+    {{#each notebooks}}
+          <div class="card">
+            <div class="card-image">
+              <img src="{{img}}" alt="{{title}}" />
+            </div>
+            <div class="card-content">
+              <span class="card-title">{{title}}</span>
+              <p class="description">{{description}}</p>
+              <p class="price">{{price}}</p>
+            </div>
+            <div class="actions card-action ">
+              {{#if @root.isAuth}}
+                {{#ifeq userId._id @root.userId }}
+                  <a href="/notebooks/{{_id}}/edit?allow=true">Edit</a>
+                {{/ifeq}}  
+              {{/if}}
+              <a href="/notebooks/{{_id}}" target="_blank ">Detail</a>
+               <form action="/cart/add" method="POST">
+                <input type="hidden" name="_id" value="{{_id}}">
+                <button type="submit" class="btn blue darken-5 ">Buy</button>
+              </form>
+            </div>
+          </div>
+    {{/each}}
+  </div>
+
+{{else}}
+  <b>Notebooks do not exists</b>
+{{/if}}

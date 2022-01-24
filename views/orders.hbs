@@ -1,0 +1,42 @@
+<h1>My{{title}}</h1>
+{{#if orders.length}}
+<div class="orders-list">
+  {{#each orders}}
+<div class="Yorder">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each notebooks}}
+               <tr>
+            <td>
+              {{notebook.title}}
+            </td>
+            <td>
+              X{{count}}
+            </td>
+            <td class="price sm">
+              {{notebook.price}}
+            </td> 
+          </tr>
+
+          {{/each}}
+          <p><b>Order id:</b>{{_id}}</p>
+        </tbody>
+      <h4>Total: <span class="price">{{price}}</span> 
+      <p>{{date}}</p></>
+      </table><br />
+       </div><!-- Yorder -->
+  {{/each}}
+  </div>
+   <button type="btn yellow darken-5">Place Order</button>
+
+{{else}}
+  <p>Not Found</p>
+{{/if}}

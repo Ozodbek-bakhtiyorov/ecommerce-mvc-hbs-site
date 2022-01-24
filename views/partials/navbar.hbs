@@ -1,0 +1,52 @@
+<nav class="grey darken-4">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">NOTEBOOK SHOP</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#if isHome}}
+        <li class="active"><a href="/">HOME</a></li>
+      {{else}}
+        <li><a href="/">HOME</a></li>
+      {{/if}}
+      {{#if isNotebooks}}
+        <li class="active"><a href="/notebooks">Notebooks</a></li>
+      {{else}}
+        <li><a href="/notebooks">Notebooks</a></li>
+      {{/if}}
+      {{#if isAuth}}
+        {{#if isNew}}
+          <li class="active"><a href="/add">Add notebook</a></li>
+        {{else}}
+          <li><a href="/add">Add notebook</a></li>
+        {{/if}}
+
+        {{#if isCart}}
+          <li class="active"><a href="/cart">Basket</a></li>
+        {{else}}
+          <li><a href="/cart">Basket</a></li>
+        {{/if}}
+        {{#if isOrder}}
+          <li class="active"><a href="/orders">Order</a></li>
+        {{else}}
+          <li><a href="/orders">Order</a></li>
+        {{/if}}
+        {{#if isLogout}}
+          <li class="active"><a href="/auth/logout">Logout</a></li>
+        {{else}}
+          <li><a href="/auth/logout">Logout</a></li>
+        {{/if}}
+        {{#if isProfile}}
+          <li class="active"><a href="/profile">Logout</a></li>
+        {{else}}
+          <li><a href="profile">Profile</a></li>
+        {{/if}}
+      {{else}}
+        {{#if isLogin}}
+          <li class="active"><a href="/auth/login#login">Sign in</a></li>
+        {{else}}
+          <li><a href="/auth/login#register">Sign in</a></li>
+        {{/if}}
+      {{/if}}
+
+    </ul>
+  </div>
+</nav>

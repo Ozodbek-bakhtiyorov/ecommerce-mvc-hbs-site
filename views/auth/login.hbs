@@ -1,0 +1,128 @@
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s6"><a href="#login">Sign in </a></li>
+      <li class="tab col s6"><a class="active" href="#register">Sign Up</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="row">
+  <div id="register" class="col s10 offset-s1 auth z-depth-4">
+     {{#if regerror}}
+      <p class="alert">{{regerror}}</p>
+    {{/if}} 
+    <h3 class="text center">Sign Up</h3>
+    <form action="/auth/register" method="POST" class="f_control" novalidate>
+      <div class="input-field col s6">
+        <input
+          placeholder=""
+          id="regName"
+          type="text"
+          class="validate"
+          name="name",
+          value="{{regdata.name}}"
+          required
+        />
+        <label for="regName">Name</label>
+        <span class="helper-text" data-error="Enter your full name "> </span>
+      </div>
+      <div class="input-field col s6">
+        <input
+          placeholder=""
+          id="regEmail"
+          type="email"
+          class="validate"
+          name="email"
+          value="{{regdata.email}}"
+
+          required
+        />
+        <label for="regEmail">Email</label>
+        <span class="helper-text" data-error="Enter your Email "> </span>
+      </div>
+      <div class="input-field col s6">
+        <input
+          placeholder=""
+          id="regPasword"
+          type="password"
+          class="validate"
+          name="password"
+          value="{{regdata.password}}"
+          required
+        />
+        <label for="regPassword">Enter your password</label>
+        <span class="helper-text" data-error="Enter Your Password">Enter Your
+          Password. Your password must be a t least 6 charachters!
+        </span>
+      </div>
+      <div class="input-field col s6 ">
+        <input
+          placeholder=""
+          id="regConfirm"
+          type="password"
+          class="validate"
+          name="confirm_password"
+          value="{{regdata.confirm_password}}"
+
+          required
+        />
+        <label for="regConfirm">Confirm Password</label>
+        <span class="helper-text" data-error="Check Your Password ">Again Enter
+          your password
+        </span>
+      </div>
+     <div class="col s12" style="margin-bottom:30px">
+        <button
+        type="submit"
+        class="btn blue col darken-1 waves-effect waves-light"
+      >Sign Up</button>
+     </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div id="login" class="col auth s6 z-depth-4 offset-s3">
+    {{#if loginerror}}
+      <p class="alert">{{loginerror}}</p>
+    {{/if}}
+    <h3 class="col s12 text center">Sign In</h3>
+    <form action="/auth/login" method="POST" class=" f_control" novalidate>
+      <div class="input-field col s12">
+        <input
+          placeholder=""
+          id="logEmail"
+          type="email"
+          class="validate"
+          name="email"
+          value="{{logindata.email}}"
+          required
+        />
+        <label for="logEmail">Email</label>
+        <span class="helper-text" data-error="Enter your Email "> </span>
+      </div>
+      <div class="input-field col s12">
+        <input
+          placeholder=""
+          id="logPasword"
+          type="password"
+          class="validate"
+          name="password"
+          value="{{logindata.password}}"
+          required
+        />
+        <label for="logPassword">Enter your password</label>
+        <span class="helper-text" data-error="Error with Password">Enter Your
+          Password. Your password must be at least 6 charachters!
+        </span>
+      </div>
+     <div class="con s12">
+        <button
+        type="submit"
+        class="btn blue darken-1 waves-effect waves-light"
+      >Sign in</button>
+     </div>
+    </form>
+  </div>
+</div>

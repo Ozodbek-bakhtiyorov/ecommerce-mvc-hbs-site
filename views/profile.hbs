@@ -1,0 +1,57 @@
+<div class="profile">
+  <div class="row">
+    <div class="col s6">
+      <div class="user_img">
+
+       {{#if user.avatarUrl}}
+           <img
+          src="/{{user.avatarUrl}}"
+          alt="avatar-{{user.name}}"
+        />
+       {{else}}
+           <img
+          src="https://www.fotocommunity.com/styleguide/img/homepage/avatar-default.jpg"
+          alt="avatar"
+        />
+       {{/if}}
+      </div>
+      <ul>
+        <li>Email:{{user.email}}</li>
+        <li>Name:{{user.name}}</li>
+      </ul>
+    </div>
+    <div class="col s6">
+      <form action="/profile" method="POST" enctype="multipart/form-data">
+        <div class="input-field col s12">
+          <input
+            placeholder=""
+            id="name"
+            type="text"
+            class="validate"
+            required
+            name="name"
+            value="{{user.name}}"
+          />
+          <label for="name">Name</label>
+          <span
+            class="helper-text"
+            data-error="This field do not be empty"
+          ></span>
+        </div>
+
+        <div class="input-field col s12 file-field ">
+          <div class="btn green darken-4 ">
+            <span>Photo</span>
+            <input type="file" name="avatar" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+        </div>
+
+        
+        <button type="submit" class="btn blue darken-3">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<h1>Add notebook</h1>
+<form action="/add" method="POST" class="z-depth-4 f_control" novalidate>
+  {{#if error}}
+    <p class="alert">{{error}}</p>
+  {{/if}}
+  <div class="input-field col s6">
+    <input
+      placeholder=""
+      id="title"
+      type="text"
+      class="validate"
+      name="title"
+      value ="{{data.title}}"
+      required
+    />
+    <label for="title">Notebook model</label>
+    <span class="helper-text" data-error="Enter Your notebook Model "> </span>
+  </div>
+
+  <div class="input-field col s6">
+    <input
+      placeholder=""
+      id="price"
+      type="number"
+      class="validate"
+      name="price"
+      value ="{{data.price}}"
+      required
+    />
+    <label for="price">Enter notebook price</label>
+    <span class="helper-text" data-error="price"></span>
+  </div>
+
+  <div class="input-field col s6">
+    <input
+      placeholder=""
+      id="img"
+      type="text"
+      class="validate"
+      value ="{{data.img}}"
+      required
+      name="img"
+    />
+    <label for="img">Url Image</label>
+    <span class="helper-text" data-error="URL img"></span>
+  </div>
+  <div class="input-field col s6">
+    <textarea
+      placeholder=""
+      id="description"
+      type="text"
+      class="materialize-textarea"
+      required
+      name="description"
+    >{{data.description}}</textarea>
+    <label for="description">Description</label>
+    <span
+      class="helper-text"
+      data-error="Enter your description for notebook!"
+    ></span>
+  </div>
+
+  <button type="submit" class="btn waves-effect waves-light">Add Notebook</button>
+</form>
