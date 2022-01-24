@@ -7,8 +7,9 @@
     "node": "16.13.0"
   },
   "scripts": {
-    "test": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": " npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "test": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@handlebars/allow-prototype-access": "^1.0.5",
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
+    "concurrently": "^7.0.0",
     "connect-flash": "^0.1.1",
     "connect-mongodb-session": "^3.1.1",
     "dotenv": "^14.2.0",
