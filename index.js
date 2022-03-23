@@ -36,13 +36,14 @@ const hbs = exphbs.create({
 const store = new MongoStore({
   collection:"sessions", 
   uri:process.env.MONGO_URI
-})
+});
+
 app.use(session( {
   secret:"Ozodbek", 
   reseave:false,
   saveUninitialized:false, 
   store:store
-}))
+}));
 
 //settings
 app.engine("hbs", hbs.engine);
